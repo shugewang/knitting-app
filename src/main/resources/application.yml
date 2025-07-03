@@ -1,3 +1,15 @@
 spring:
   application:
     name: knitting-app
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    schemas: public
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/knitting?currentSchema=public
+    username: local_user
+    password: local_password
